@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\StoreAkunRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UpdateAkunRequest;
+use App\Http\Requests\UbahPasswordProfilRequest;
 
 class AkunController extends Controller
 {
@@ -93,5 +95,30 @@ class AkunController extends Controller
         $user->delete();
 
         return redirect()->route('akun.index')->with('success', 'Berhasil Menghapus Akun');
+    }
+
+    public function indexResetPassword(string $id_user)
+    {
+        $judulHalaman = 'Akun';
+        $breadcrumbs = [
+            ['url' => route('home.index'), 'label' => 'Home'],
+            ['url' => route('akun.index'), 'label' => 'Akun'],
+            ['url' => '', 'label' => 'Reset Password']
+        ];
+
+        $user = User::findOrFail($id_user);
+
+        return view('akun.resetPassword', compact('judulHalaman', 'breadcrumbs', 'user'));
+    }
+
+    public function processResetPassword(UbahPasswordProfilRequest $request, $id_user)
+    {
+        $user = User::findOrFail($id_user);
+
+        $user->password = Hash::make($request['new_password']);
+
+        $user->save();
+
+        return redirect()->route('index.resetPassword', $id_user)->with('success', 'Berhasil Mengubah Password');
     }
 }

@@ -70,5 +70,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/profil/ubah-password', [ProfilController::class, 'indexUbahPassword'])->name('index.ubahPassword');
         Route::put('/profil/ubah-password/{id_user}', [ProfilController::class, 'processUbahPassword'])->name('process.ubahPassword');
         Route::resource('akun', AkunController::class);
+        Route::get('/akun/reset-password/{id_user}/reset', [AkunController::class, 'indexResetPassword'])->name('index.resetPassword');
+        Route::put('/akun/reset-password/{id_user}', [AkunController::class, 'processResetPassword'])->name('process.resetPassword');
     });
 });

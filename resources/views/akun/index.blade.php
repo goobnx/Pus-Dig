@@ -65,7 +65,7 @@
                                                     <a href="{{ route('akun.edit', $user->id_user) }}" class="btn btn-success">
                                                         <iconify-icon icon="tabler:pencil" class="fs-6"></iconify-icon>
                                                     </a>
-                                                    <a href="" class="btn btn-warning">
+                                                    <a href="{{ route('index.resetPassword', $user->id_user) }}" class="btn btn-warning">
                                                         <iconify-icon icon="tabler:key" class="fs-6"></iconify-icon>
                                                     </a>                                
                                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
