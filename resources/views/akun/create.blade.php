@@ -61,7 +61,7 @@
                                                 <option value="" disabled selected>Pilih Role</option>
                                                 <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
                                                 <option value="petugas" {{ old('role') == 'petugas' ? 'selected' : '' }}>Petugas</option>
-                                                <option value="peminjam" {{ old('role') == 'peminjam' ? 'selected' : '' }}>Peminjam</option>
+                                                {{-- <option value="peminjam" {{ old('role') == 'peminjam' ? 'selected' : '' }}>Peminjam</option> --}}
                                             </select>
                                             @error('role')
                                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -70,12 +70,12 @@
                                     </div>                                    
                                     <div class="row">
                                         <div class="col my-3">
-                                            <label class="form-label" for="password">Password Admin<span
+                                            <label class="form-label" for="password">Password<span
                                                     class="text-danger"> *</span></label>
                                             <div class="input-password" style="position: relative;">
                                                 <input type="password"
                                                     class="form-control @error('password') is-invalid @enderror passwordField"
-                                                    id="password" name="password" placeholder="Masukkan Password Admin"
+                                                    id="password" name="password" placeholder="Masukkan Password"
                                                     minlength="8">
                                                 <button type="button" class="btn togglePassword"
                                                     style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">

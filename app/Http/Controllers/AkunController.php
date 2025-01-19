@@ -68,9 +68,9 @@ class AkunController extends Controller
         $user = User::findOrFail($id_user);
 
         $user->fill([
-            'username' => $request->username,
-            'email'    => $request->email,
-            'alamat'   => $request->alamat,
+            // 'username' => $request->username,
+            // 'email'    => $request->email,
+            // 'alamat'   => $request->alamat,
             'role'     => $request->role,
         ]);
 

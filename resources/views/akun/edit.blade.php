@@ -26,7 +26,7 @@
                                                     *</span></label>
                                             <input type="text" class="form-control @error('username') is-invalid @enderror"
                                                 id="username" name="username" value="{{ old('username', $user->username) }}"
-                                                placeholder="Masukkan Username">
+                                                placeholder="Masukkan Username" disabled>
                                             @error('username')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -38,7 +38,7 @@
                                                     *</span></label>
                                             <input type="email" class="form-control @error('email') is-invalid @enderror"
                                                 id="email" name="email" value="{{ old('email', $user->email) }}"
-                                                placeholder="Masukkan Email">
+                                                placeholder="Masukkan Email" disabled>
                                             @error('email')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -49,12 +49,13 @@
                                             <label class="form-label" for="alamat">Alamat<span
                                                     class="text-danger"> *</span></label>
                                             <textarea class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat"
-                                                placeholder="Masukkan Alamat">{{ old('alamat', $user->alamat) }}</textarea>
+                                                placeholder="Masukkan Alamat" disabled>{{ old('alamat', $user->alamat) }}</textarea>
                                             @error('alamat')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
                                     </div>
+
                                     <div class="row">
                                         <div class="col my-3">
                                             <label class="form-label" for="role">Role<span class="text-danger"> *</span></label>
