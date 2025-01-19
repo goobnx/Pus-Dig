@@ -148,4 +148,15 @@ class PeminjamanUserController extends Controller
 
         return view('user.peminjaman', compact('peminjaman'));
     }
+
+    public function riwayatPeminjaman()
+    {
+        $user = auth()->user();
+
+        $riwayat = Peminjaman::where('id_user', $user->id_user)
+            ->whereIn('status_peminjaman', ['selesai_pinjam'])
+            ->get();
+
+        return view('user.riwayat', compact('riwayat'));
+    }    
 }

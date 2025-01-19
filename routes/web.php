@@ -44,6 +44,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/pinjam/{slug_judul_buku}', [PeminjamanUserController::class, 'processPeminjaman'])->name('process.peminjaman');
         Route::post('/kembalikan/{slug_judul_buku}', [PeminjamanUserController::class, 'processPengembalian'])->name('process.pengembalian');
         Route::get('/peminjaman-saya', [PeminjamanUserController::class, 'indexPeminjaman'])->name('indexPeminjaman');
+        Route::get('/riwayat-peminjaman', [PeminjamanUserController::class, 'riwayatPeminjaman'])->name('riwayatPeminjaman');
         Route::post('/buku/{slug_judul_buku}/ulasan', [UlasanController::class, 'storeUlasan'])->name('store.ulasan');
         Route::put('/buku/ulasan/{id_ulasan}', [UlasanController::class, 'updateUlasan'])->name('update.ulasan');
         Route::get('/profil-user', [ProfilUserController::class, 'index'])->name('profilUser.index');

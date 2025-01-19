@@ -20,6 +20,7 @@
                                             ['route' => 'index.book', 'icon' => 'ti-layout-dashboard', 'label' => 'Dashboard'],
                                             ['route' => 'profilUser.index', 'icon' => 'ti-user', 'label' => 'Profil Saya'],
                                             ['route' => 'indexPeminjaman', 'icon' => 'ti-file-description', 'label' => 'Peminjaman Saya'],
+                                            ['route' => 'riwayatPeminjaman', 'icon' => 'ti-history', 'label' => 'Riwayat Peminjaman'],
                                             ['route' => 'index.koleksi', 'icon' => 'ti-book', 'label' => 'Koleksi Buku'],
                                             ['route' => 'index.ubahPasswordUser', 'icon' => 'ti-key', 'label' => 'Ubah Password'],
                                         ],
