@@ -13,7 +13,7 @@ use App\Http\Requests\UbahPasswordProfilRequest;
 
 class AkunController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $judulHalaman = 'Akun';
         $breadcrumbs = [
@@ -21,7 +21,15 @@ class AkunController extends Controller
             ['url' => '', 'label' => 'Akun']
         ];
 
-        $user = User::all();
+        $role = $request->input('role');
+
+        $userQuery = User::query();
+
+        if ($role) {
+            $userQuery->where('role', $role);
+        }
+
+        $user = $userQuery->get();
 
         return view('akun.index', compact('judulHalaman', 'breadcrumbs', 'user'));
     }

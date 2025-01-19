@@ -10,6 +10,26 @@
 
             <div class="row">
                 <div class="col-lg-12">
+
+                    <form action="{{ route('akun.index') }}" method="GET" class="mb-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="role" class="form-label">Role</label>
+                                <select name="role" id="role" class="form-control">
+                                    <option value="">Semua Role</option>
+                                    <option value="admin" {{ ($role ?? '') === 'admin' ? 'selected' : '' }}>Admin</option>
+                                    <option value="petugas" {{ ($role ?? '') === 'petugas' ? 'selected' : '' }}>Petugas</option>
+                                    <option value="peminjam" {{ ($role ?? '') === 'peminjam' ? 'selected' : '' }}>Peminjam</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 align-self-end">
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="ti ti-filter"></i> Filter
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
                     <a href="{{ route('akun.create') }}">
                         <button type="button" class="btn btn-info mb-3">
                             Tambah Akun
